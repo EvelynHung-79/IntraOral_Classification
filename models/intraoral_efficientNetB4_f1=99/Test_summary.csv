@@ -1,0 +1,7 @@
+,Path,Accuracy
+0,checkpoint_16.h5,0.974220159835009
+1,checkpoint_17.h5,0.9840164990977056
+2,checkpoint_21.h5,0.9907192575406032
+3,checkpoint_22.h5,0.9842742974993555
+4,checkpoint_24.h5,0.994328435163702
+5,../models/intraoral_inMouth_angle.h5,0.9945862335653519

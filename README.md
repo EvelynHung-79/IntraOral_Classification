@@ -23,6 +23,7 @@ To re-generate the result, run 'intraoral_train.py' in 'code' folder directly, m
 After you have execute the code, 'accuracy graph', 'loss graph', 'training log', 'model architecture', 'model weights', and 'checkpoints' will be saved.
 The result is currently 0.99 on F1-score/Precision/Recall/Accuracy (The graph below shows the result of accuracy over best epochs).
 And the model is saved in the link below.
+
 https://drive.google.com/drive/folders/13QqLrhO5vA3QhRs47QQk38rzg-kWn0a2?usp=sharing
 
 <img width="366" alt="image" src="https://user-images.githubusercontent.com/57160523/191674959-f27c4795-53d8-4afa-a572-11a517e3a867.png">

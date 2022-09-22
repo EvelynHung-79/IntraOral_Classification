@@ -22,7 +22,6 @@ from tensorflow.python.keras.backend import set_session
 from tensorflow_addons.losses import SigmoidFocalCrossEntropy
 
 class_names = ['frontal', 'frontal_90', 'frontal_180', 'frontal_270', 'left', 'left_90', 'left_180', 'left_270', 'lower_v2', 'lower_90_v2', 'lower_180_v2', 'lower_270_v2', 'others', 'right', 'right_90', 'right_180', 'right_270', 'upper_v2', 'upper_90_v2', 'upper_180_v2', 'upper_270_v2']
-# class_names = ['frontal', 'frontal_90', 'frontal_180', 'frontal_270', 'left', 'left_90', 'left_180', 'left_270', 'lower', 'lower_90', 'lower_180', 'lower_270', 'others', 'right', 'right_90', 'right_180', 'right_270', 'upper', 'upper_90', 'upper_180', 'upper_270']
 train_path = "../data/angle/train"
 
 target_size = (224,224)
@@ -118,10 +117,10 @@ model_checkpoint = ModelCheckpoint(
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.5,
                               patience=3, min_lr=1e-7, verbose=1)
 early_stop = EarlyStopping(monitor='val_loss', patience=5, verbose=1)
-logger = CSVLogger("training_log_" + str(datetime.now().strftime('%H:%M')) + ".csv", append=True, separator=',')
+logger = CSVLogger("training_log.csv", append=True, separator=',')
 
 
-optimizer = Adam(learning_rate=1e-3)
+optimizer = Adam(learning_rate=1e-4)
 # optimizer = AdamW(learning_rate=1e-2, weight_decay=0.004)
 
 

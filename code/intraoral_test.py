@@ -38,7 +38,9 @@ for i in range(len(class_names)):
             labels.append(i)
     print(str(i) + ' finished')
 
-print('finish collect images with cv2')
+print('finish collect image with cv2')
+print(len(images))
+print(len(labels))
 
 # fig = plt.figure(figsize=(15, 15))
 # for i in range(len(images)):
@@ -69,7 +71,7 @@ for className in class_names:
 
 # plt.bar(range(len(dic)), list(dic.values()), align='center')
 # plt.xticks(range(len(dic)), list(dic.keys()))
-print(dic)
+# print(dic)
 # plt.show()
 
 target_size = (224,224)
@@ -82,72 +84,22 @@ datagen = ImageDataGenerator(rescale = 1./255,
                             vertical_flip=False)
 
 #以 batch 的方式讀取資料
-predict_batches = datagen.flow_from_directory(
-        path,
-        seed=0,
-        shuffle=False,
-        target_size = target_size,  
-        batch_size = batch_size,
-        classes = class_names)
+# predict_batches = datagen.flow_from_directory(
+#         path,
+#         seed=0,
+#         shuffle=False,
+#         target_size = target_size,  
+#         batch_size = batch_size,
+#         classes = class_names)
 ########## ABOVE method is not working
 
-# predict_batches = datagen.flow(
-#     x=images,
-#     y=labels,
-#     batch_size=batch_size,
-#     shuffle=False,
-#     seed=0
-# )
-
-#######################################################################################
-#GO Thhhhhhhhhhhhhhhhhhhrough predict_bacth print it out (lower)
-
-# print('imageDataGenerator_method...predict_batch')
-# fig = plt.figure(figsize=(15, 15))
-# count = 0
-# for i in range(len(predict_batches)):
-#     # a = np.argmax(predict_batches[i][1])
-#     b = (predict_batches.classes)[i]
-#     if b == 19:
-        
-#         if count < 100: count += 1
-#         else: break
-#         image = predict_batches[i][0][0] # i th image, image(3 layers), break array
-#         fig.add_subplot(10, 10, count)
-#         plt.imshow(image)
-#         plt.axis('off')
-#     if b == 20: 
-#         print('Number of images iterated', count)
-#         break
-# plt.show()
-# fig.savefig('upper_180.png')
-    
-#######################################################################################
-
-
-#######################################################################################
-#GO Thhhhhhhhhhhhhhhhhhhrough bacth print it out (lower)
-# print('imageDataGenerator_method...batch')
-# fig = plt.figure(figsize=(15, 15))
-# count = 0
-# for i in range(len(predict_batches)):
-#     b = predict_batches[i][1]
-#     # b = (batch.classes)[i]
-#     if b == 19:
-#         if count < 100: count += 1
-#         else: break
-#         image = predict_batches[i][0][0] # i th image, image(3 layers), break array
-#         fig.add_subplot(10, 10, count)
-#         plt.imshow(image)
-#         plt.axis('off')
-#     elif b == 20: 
-#         print('Number of images iterated', count)
-#         break
-#     else: continue
-# plt.show()
-# fig.savefig('imageDataGenerator_method_batch.png')
-    
-#######################################################################################
+predict_batches = datagen.flow(
+    x=images,
+    y=labels,
+    batch_size=batch_size,
+    shuffle=False,
+    seed=0
+)
 
 
 # fig = plt.figure(figsize=(15, 15))
@@ -207,7 +159,7 @@ for checkpoint in checkpoints:
             if ((predict_batches.y)[i] != y_pred[i]):
                 count += 1
                 image = predict_batches[i][0][0] # i th image, image(3 layers), break array
-                fig.add_subplot(8, 5, count)
+                fig.add_subplot(5, 5, count)
                 plt.imshow(image)
                 plt.axis('off')
                 plt.title(str((predict_batches.y)[i]) + ' -> ' + str(y_pred[i]))

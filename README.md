@@ -5,7 +5,7 @@ This is an image classification project on intraoral images in Dentall.
 The dataset used is 'angle' with classes of 'frontal', 'frontal_90', 'frontal_180', 'frontal_270', 'left', 'left_90', 'left_180', 'left_270', 'lower_v2', 'lower_90_v2', 'lower_180_v2', 'lower_270_v2', 'others', 'right', 'right_90', 'right_180', 'right_270', 'upper_v2', 'upper_90_v2', 'upper_180_v2', and 'upper_270_v2'.
 Data is provided below, and anyone with a dentall account should be able to access.
 
-https://drive.google.com/drive/folders/13QqLrhO5vA3QhRs47QQk38rzg-kWn0a2?usp=sharing
+[https://drive.google.com/drive/folders/13QqLrhO5vA3QhRs47QQk38rzg-kWn0a2?usp=sharing](https://drive.google.com/drive/folders/13QqLrhO5vA3QhRs47QQk38rzg-kWn0a2?usp=sharing)
 
 ## Preparation
 Prepare the tensorflow gpu environment on your device, and make sure it is running correctly.

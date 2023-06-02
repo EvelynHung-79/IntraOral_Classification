@@ -1,5 +1,5 @@
 # IntraOral_classification
-This is an image classification project on intraoral images in Dentall.
+This is an image classification project on intraoral images.
 
 ## Dataset
 The dataset used is 'angle' with classes of 'frontal', 'frontal_90', 'frontal_180', 'frontal_270', 'left', 'left_90', 'left_180', 'left_270', 'lower_v2', 'lower_90_v2', 'lower_180_v2', 'lower_270_v2', 'others', 'right', 'right_90', 'right_180', 'right_270', 'upper_v2', 'upper_90_v2', 'upper_180_v2', and 'upper_270_v2'.
